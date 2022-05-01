@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portle</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+<body style="background-color: #80819b;">
+<div id="index_frame">
+    <div id="navbar">
+        <img id="navtitle" src="../static/portle.svg" alt="Portle"/>
+    </div>
+    <div id="form_cont">
+        <form id=login action="/lounge">
+            <div style="width: 400pt">
+                <div>
+                    <label>Initials:</label>
+                    <br/>
+                    <input style="width:50%" type="text" maxlength="3" name="username">
+                </div>
+                <div>
+                    <label>Lounge ID</label>
+                    <br/>
+                    <input style="width:50%" type="text" maxlength="3" name="lounge_id">
+                </div>
+                <button type="submit">Join</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

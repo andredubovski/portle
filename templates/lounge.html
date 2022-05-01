@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lounge</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+
+<body onbeforeunload="return say_goodbye()">
+<div id="frame">
+    <div id="navbar">
+        <img id="navtitle" src = "../static/portle.svg" alt="Portle"/>
+    </div>
+
+    <table id="lounge_table">
+        <form>
+            <tr>
+                <td class="portal">
+                    <textarea readonly class="portal_box" id="p1">hi</textarea>
+                    <div class="name_text" id="label1"><p id="name1">Name</p></div>
+                </td>
+                <td class="portal">
+                    <textarea readonly class="portal_box" id="p2">hi</textarea>
+                    <div class="name_text" id="label2"><p id="name2">Name</p></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="portal">
+                    <textarea readonly class="portal_box" id="p3">hi</textarea>
+                    <div class="name_text" id="label3"><p id="name3">Name</p></div>
+                </td>
+                <td class="portal">
+                    <textarea readonly class="portal_box" id="p4">hi</textarea>
+                    <div class="name_text" id="label4"><p id="name4">Name</p></div>
+                </td>
+            </tr>
+            <tr id="input_row">
+                <td class="portal">
+                    <textarea readonly class="portal_box" id="p5">hi</textarea>
+                    <div class="name_text" id="label5"><p id="name5">Name</p></div>
+                </td>
+                <td class="portal">
+                    <textarea readonly class="portal_box" id="p6">hi</textarea>
+                    <div class="name_text" id="label6"><p id="name6">Name</p></div>
+                </td>
+            </tr>
+        </form>
+    </table>
+
+    <div id="keyboard">
+        <h2 id="keyboard-label">clear your portle with alt + o</h2>
+    </div>
+
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+            integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+            crossorigin="anonymous"></script>
+    <script>
+        const socket = io.connect("http://10.21.174.71:5001");
+        let my_id = 0
+
+        function broadcast_message_modified(t, e) {
+            let message = document.getElementById('p' + my_id).value.trim();
+            socket.emit('message_modified', {
+                username: "{{ username }}",
+                user_id: "{{ user_id }}",
+                message: message
+            })
+
+            console.log("{{ username }}#{{ user_id }} updated message to: " + message)
+        }
+
+        socket.on("connect", function () {
+            socket.emit('join_lounge', {
+                username: "{{ username }}",
+                user_id: "{{ user_id }}",
+                lounge_id: "{{ lounge_id }}"
+            });
+            my_id = parseInt("{{ user_id }}")
+
+            document.getElementById('p' + my_id).readOnly = false
+
+            document.getElementById('p' + my_id).onkeyup = broadcast_message_modified
+            document.getElementById('p' + my_id).onpaste = broadcast_message_modified
+
+        });
+
+        socket.on('join_lounge_announcement', function (data) {
+            console.log(`${data.username} has joined the lounge with ID ${data.user_id}.`)
+            document.getElementById("name" + data.user_id).textContext = data.username
+            broadcast_message_modified()
+        })
+
+        function say_goodbye() {
+            socket.emit('message_modified', {
+                username: "{{ username }}",
+                user_id: "{{ user_id }}",
+                message: ".left"
+            });
+        }
+
+        socket.on('receive_update', function (data) {
+            console.log(data)
+            let recipient_box = 0
+            recipient_box = parseInt(data.user_id)
+            let name_text = document.getElementById('name' + recipient_box)
+            name_text.textContent = data.username
+            if (parseInt(data.user_id) == my_id) {
+                name_text.style.fontWeight = "900";
+                let name_label = document.getElementById('label' + recipient_box)
+                name_label.style.backgroundColor = "rgba(0, 0, 255, 0.4)"
+                return
+            }
+            let textarea = document.getElementById('p' + recipient_box)
+            textarea.value = data.message
+            textarea.scrollTop = textarea.scrollHeight
+        })
+
+        socket.on('receive_paragraph', function (data) {
+            console.log(data);
+
+        })
+
+        document.onkeyup = function (e) {
+            var e = e || window.event; // for IE to cover IEs window event-object
+            if (e.altKey && e.which == 79) {
+                document.getElementById("p"+my_id).value = "";
+                return false;
+            }
+}
+
+    </script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+body {
+    background-color: #40415b;
+    font-family:"Trebuchet MS";
+}
+
+#frame {
+    position: relative;
+    background-color: white;
+    width: 375pt;
+    height: 812pt;
+    border-radius: 45pt;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#index_frame {
+    position: relative;
+    background-color: #40415b;
+    width: 375pt;
+    height: 812pt;
+    border-radius: 45pt;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login {
+    margin: auto;
+    display: block;
+    color: white;
+}
+
+#form_cont {
+    width: 55%;
+    margin: auto;
+    margin-top: 100pt;
+}
+
+#navbar {
+    background-color: grey;
+    width: 100%;
+    height: 38.5pt;
+    border-radius: 38.5pt 38.5pt 0pt 0pt;
+    position: relative;
+}
+
+#navtitle {
+    color: white;
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+    height: 20pt;
+    margin-top: 0pt;
+    text-align: center;
+}
+
+#lounge_table {
+    width: 100%;
+    height: 440.5pt;
+    background-color: lightgrey;
+    border-spacing: 4pt;
+}
+
+.portal {
+    position: relative;
+    padding: 0pt;
+    background-color: white;
+    vertical-align: top;
+    font-size: 15pt;
+}
+
+#p1 {
+    color: #fa7900;
+}
+
+#p2 {
+    color: #ff003b;
+}
+
+#p3 {
+    color: #004CFF;
+}
+
+#p4 {
+    color: #09CB26;
+}
+
+#p5 {
+    color: #7004b1;
+}
+
+#p6 {
+    color: #7e6b47;
+}
+
+p {
+    margin: 0pt;
+}
+
+.name_label, #label1,#label2,#label3,#label4,#label5,#label6 {
+    position: absolute;
+    padding: 4px;
+    background-color: rgba(0,0,0,0.21);
+    color: white;
+    /*transform: rotate(-90deg) translate(0%, 0);*/
+    transform-origin: right center;
+    bottom: 0%;
+    right: 0;
+}
+
+.portal_box {
+    margin: 0;
+    resize: none;
+    width: 98%;
+    height: 100%;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+    /*overflow: -moz-scrollbars-none;*/
+    overflow: auto;
+    -ms-overflow-style: none;
+    font-family: "Trebuchet MS";
+    font-size: 15pt;
+}
+
+.portal_box::-webkit-scrollbar { width: 0 !important }
+
+#input_row {
+    height: auto;
+}
+
+#input_portal {
+    position: relative;
+}
+
+/*#message_box {*/
+/*    resize: none;*/
+/*    position:absolute; top:0; left:0; right:0; bottom:0;*/
+/*    width: 98%;*/
+/*    height: 98%;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    overflow: -moz-scrollbars-none;*/
+/*    -ms-overflow-style: none;*/
+/*    font-family: "Trebuchet MS";*/
+/*    font-size: 15pt;*/
+/*}*/
+
+#message_box:focus, .portal_box:focus {
+    outline: none;
+    border: none;
+}
+
+#message_box::-webkit-scrollbar { width: 0 !important }
+
+#keyboard {
+    background-color: grey;
+    width: 100%;
+    height: 333pt;
+    border-radius: 0pt 0pt 38.5pt 38.5pt;
+    position: absolute;
+    bottom: 0;
+}
+
+#keyboard-label {
+    color: white;
+    margin: auto;
+    margin-top: 100pt;
+    text-align: center;
+}
