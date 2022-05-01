@@ -1,7 +1,7 @@
 # Portle
 This repo contains a prototype for an asynchronous chat webapp with a grid layout called Portle.
 
-![demo.png](https://images.squarespace-cdn.com/content/v1/5b982331af20968d866b39a3/77b80c4d-739f-4811-b26d-c4398d9d904d/demo.png?format=2500w | height=200)
+<img src="https://images.squarespace-cdn.com/content/v1/5b982331af20968d866b39a3/77b80c4d-739f-4811-b26d-c4398d9d904d/demo.png?format=2500w" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="300" />
 
 We can read two to three times faster than speak or listen, so in verbal meetings like Zoom, there is conversational bandwidth that is not being taken advantage of. Our product, Portle, enhances online meetings and chats  by adding an accompanying textual layer on top of audio and video. Unlike traditional chat, Portle allows users to participate in parallel rather than sequentially. Our prototype web app looks like a Zoom grid view, but instead of webcams displayed in a grid, there are text fields, or “portals” for each participant and the host. Each user can type or dictate text into their portal and the instructor can also highlight portals to draw attention to them. We also have Focus Mode, where only instructor-selected portals are visible to the participants. For groups of twenty and over, Faction Mode splits the participants into subgroups of 3-7 that share a portal.
 
