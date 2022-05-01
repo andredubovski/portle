@@ -7,7 +7,7 @@ We can read two to three times faster than speak or listen, so in verbal meeting
 
 These features accomplish a few things. For one, people don’t have to take turns participating so that otherwise lost or forgotten ideas can get the exposure they deserve, allowing for greater breadth of discussion. Also, better ideas can be identified more quickly and explored more in depth rather than getting bottlenecked in a meandering exchange. Multiple facets of a single topic can be delved into and cross pollinate for a richer overall conversation. Finally, the instructor has foresight on what each participant wants to say before calling on them verbally, so the discussion can be guided in the intended direction. Here is a two minute demo of Portle in action: https://youtu.be/uQqwIYmT3BE.
 
-#To build and run Portle on local WiFi network
+# To build and run Portle on local WiFi network
 1. Open root directory as a project in PyCharm (for example)
 2. cd into the root directory in Terminal or other command line
 3. run <code>set FLASK_APP=app.py</code> in command line
