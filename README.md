@@ -7,10 +7,12 @@ We can read two to three times faster than speak or listen, so in verbal meeting
 
 <!-- Each user can type or dictate text into their portal and the instructor can also highlight portals to draw attention to them. We also have Focus Mode, where only instructor-selected portals are visible to the participants. For groups of twenty and over, Faction Mode splits the participants into subgroups of 3-7 that share a portal. -->
 
-These features accomplish a few things. For one, people don’t have to take turns participating so that otherwise lost or forgotten ideas can get the exposure they deserve, allowing for greater breadth of discussion. Also, better ideas can be identified more quickly and explored more in depth rather than getting bottlenecked in a meandering exchange. Multiple facets of a single topic can be delved into and cross pollinate for a richer overall conversation. Finally, the instructor has foresight on what each participant wants to say before calling on them verbally, so the discussion can be guided in the intended direction. Here is a two minute demo of Portle in action: https://youtu.be/uQqwIYmT3BE.
+These features accomplish a few things. For one, people don’t have to take turns 
+participating so that otherwise lost or forgotten ideas can get the exposure they deserve, allowing for greater breadth of discussion. Also, better ideas can be identified more quickly and explored more in depth rather than getting bottlenecked in a meandering exchange. Multiple facets of a single topic can be delved into and cross pollinate for a richer overall conversation. Finally, the instructor has foresight on what each participant wants to say before calling on them verbally, so the discussion can be guided in the intended direction. Here is a two minute demo of Portle in action: https://youtu.be/uQqwIYmT3BE.
 
 # To build and run Portle on local WiFi network
-1. Open root directory as a project in PyCharm (for example)
+1. Open root directory as a project in PyCharm (for example). You can also open 
+static/lounge.html separately inn any text editor.
 2. cd into the root directory in Terminal or other command line
 3. run <code>set FLASK_APP=app.py</code> in command line
 4. run <code>python -m flask run --host=0.0.0.0 --port=5001</code> in command line
